@@ -1,0 +1,90 @@
+const butt=document.getElementById("botao");
+const but=document.getElementById("bot"); 
+const ju=document.getElementById("juros")
+const ju1=document.getElementById("juros1")
+
+
+          const select=document.createElement("select");  
+          select.id="meuselect";
+          const opcoes =["11,72%-CDI/CDB", "7%", "8%"]
+          
+          opcoes.forEach((texto, index) => {
+                 const option = document.createElement("option");
+                 option.value = index;
+                 option.textContent = texto;
+                 select.appendChild(option);
+          });
+          const input=document.createElement("input");
+          input.type="number";
+          input.placeholder="digite a %";
+          input.id="inputmanual";
+          input.style.display="none";
+          ju.appendChild(input);
+
+          select.addEventListener("change", ()=>
+          { if (select.value === "1"){
+            input.style.display = "inline-block";
+          } else {
+            input.style.display = "none";
+          }}
+          )
+          const se= select.cloneNode(true);
+          ju.appendChild(select);
+          const j=ju1.appendChild(se);
+        
+  
+butt.addEventListener("click", function(){
+    const capital = parseFloat(document.getElementById('capital').value);
+    
+    const tempo = parseInt(document.getElementById('tempo').value);
+   
+    let valorse = select.value;
+          let result;
+          if (valorse == 0) {
+            result = 11.72 / 100;
+          } else if (valorse == 1) {
+            result = 3 / 100;
+          } else {
+            result = 8 / 100;
+          }
+  
+    if(isNaN(capital)){
+        alert('por gentileza preencher o campo 1');
+      };
+     if (isNaN(tempo)){
+        alert('por gentileza preencher o campo 3');
+      };      
+     
+    const montante = capital * result * tempo;
+
+    document.getElementById('resultado').textContent =`Seu patrimonio em ${tempo} anos, será ${montante}`});
+  
+
+but.addEventListener("click", function(){
+      
+        
+      
+        const capitall = parseFloat(document.getElementById('capital1').value);
+        
+        const tempoo = parseInt(document.getElementById('tempo1').value);
+    
+          let valorse2 = j.value;
+          let result1;
+          if (valorse2 == 0) {
+            result1 = 11.72 / 100;
+          } else if (valorse2 == 1) {
+            result1 = 3 / 100;
+          } else {
+            result1 = 8 / 100;
+          }
+    
+          if(isNaN(capitall)){
+        alert('por gentileza preencher o campo 1');
+      };
+     if (isNaN(tempoo)){
+        alert('por gentileza preencher o campo 3');
+      };      
+        
+        const montant = capitall * (result1 + 1) ** tempoo;
+    
+        document.getElementById('resultad').textContent = `Seu patrimonio em ${tempoo} anos, será ${montant.toFixed(2)}`});

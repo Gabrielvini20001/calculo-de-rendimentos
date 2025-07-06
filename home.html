@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>calculo de finanças</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+        <style>
+            body{
+                background-image: url('https://einvestidor.estadao.com.br/wp-content/uploads/2024/08/adobestock-265053102-1_080820240635.jpeg-e1723156833369.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+           .d{
+            background-color: white;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            
+            
+           }
+            .tx{
+                background-color: rgb(247, 248, 245);
+                padding: 30px;
+                text-align: center;
+                border: 2px solid black;
+                border-radius: 10px;
+                font-weight: bold;
+           }
+        </style>
+    </head>
+    <body>
+        <h1 class="tx">calculo de finanças</h1>
+        
+          <div class="d">
+            <h3>Este site te ajudará a calcular seus investimentos  </h3>
+           <h2>Juros Simples</h2>
+            <label for="capital">capital:</label>
+             <input type="number" id="capital">
+              <br> <label for="juros">juros:</label> 
+               <button type="number" id="juros"></button>
+                <br> <label for="tempo">anos:</label> 
+              <input type="number" id="tempo">
+            <button id='botao'>enviar</button>
+       
+           <h3>Montante: <span id="resultado"></span></h3>
+        
+            <h2>Juros compostos</h2>
+             <label for="capital">capital:</label>
+              <input type="number" id="capital1">
+           <br> <label for="juros">juros:</label> 
+              <button type="number" id="juros1"></button>
+              <br> <label for="tempo">anos:</label> 
+              <input type="number" id="tempo1">
+             <button id='bot'>enviar</button>
+           
+             <h3>Montante: <span id="resultad"></span></h3>
+            </div>
+         <script src="calculo.js"></script>
+
+    </body>
+</html>
