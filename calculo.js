@@ -6,7 +6,7 @@ const ju1=document.getElementById("juros1")
 
           const select=document.createElement("select");  
           select.id="meuselect";
-          const opcoes =["11,72%-CDI/CDB", "7%", "8%"]
+          const opcoes =["11,72%-CDI/CDB", "6%", "escolher"]
           
           opcoes.forEach((texto, index) => {
                  const option = document.createElement("option");
@@ -14,24 +14,39 @@ const ju1=document.getElementById("juros1")
                  option.textContent = texto;
                  select.appendChild(option);
           });
+          const se= select.cloneNode(true); 
+
           const input=document.createElement("input");
           input.type="number";
           input.placeholder="digite a %";
           input.id="inputmanual";
           input.style.display="none";
+         
+          const j1=input.cloneNode(true);
+         
           ju.appendChild(input);
-
+          ju1.appendChild(j1);
+          
           select.addEventListener("change", ()=>
-          { if (select.value === "1"){
+          { if (select.value === "2"){
             input.style.display = "inline-block";
-          } else {
+          }else {
             input.style.display = "none";
+             j1.style.display = "none";
           }}
-          )
-          const se= select.cloneNode(true);
+          ) 
+          se.addEventListener("change", ()=>
+          { if (se.value === "2"){
+            j1.style.display ="inline-block";
+          } else {
+              j1.style.display = "none";
+          }}
+          ) 
+
           ju.appendChild(select);
           const j=ju1.appendChild(se);
-        
+
+         
   
 butt.addEventListener("click", function(){
     const capital = parseFloat(document.getElementById('capital').value);
@@ -43,7 +58,8 @@ butt.addEventListener("click", function(){
           if (valorse == 0) {
             result = 11.72 / 100;
           } else if (valorse == 1) {
-            result = 3 / 100;
+            const i=(parseFloat(input.value));
+            result = i / 100;
           } else {
             result = 8 / 100;
           }
@@ -73,7 +89,9 @@ but.addEventListener("click", function(){
           if (valorse2 == 0) {
             result1 = 11.72 / 100;
           } else if (valorse2 == 1) {
-            result1 = 3 / 100;
+            const jh=(parseFloat(j1.value));
+          
+            result1 = jh / 100;
           } else {
             result1 = 8 / 100;
           }
