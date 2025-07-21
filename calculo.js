@@ -57,11 +57,11 @@ butt.addEventListener("click", function(){
           let result;
           if (valorse == 0) {
             result = 11.72 / 100;
-          } else if (valorse == 1) {
+          } else if (valorse == 2) {
             const i=(parseFloat(input.value));
             result = i / 100;
           } else {
-            result = 8 / 100;
+            result = 6 / 100;
           }
   
     if(isNaN(capital)){
@@ -88,12 +88,12 @@ but.addEventListener("click", function(){
           let result1;
           if (valorse2 == 0) {
             result1 = 11.72 / 100;
-          } else if (valorse2 == 1) {
+          } else if (valorse2 == 2) {
             const jh=(parseFloat(j1.value));
           
             result1 = jh / 100;
           } else {
-            result1 = 8 / 100;
+            result1 = 6 / 100;
           }
     
           if(isNaN(capitall)){
