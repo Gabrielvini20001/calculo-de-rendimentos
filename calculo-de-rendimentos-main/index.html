@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cálculo de Finanças</title>
+    <meta name="description" content="Calculadora de investimentos com juros simples e compostos">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-image: url('https://einvestidor.estadao.com.br/wp-content/uploads/2024/08/adobestock-265053102-1_080820240635.jpeg-e1723156833369.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            /* Uma fonte padrão deixa o visual mais limpo */
+        }
+        /* Container principal dos formulários */
+        
+        .d {
+            background-color: white;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Título principal do topo */
+        
+        .tx {
+            background-color: rgb(247, 248, 245);
+            padding: 30px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-weight: bold;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        /* Pequeno ajuste para os selects/inputs não ficarem colados */
+        
+        .d input,
+        .d select,
+        .d div {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="tx">Cálculo de Finanças</h1>
+
+    <div class="d">
+        <h3>Este site te ajudará a calcular seus investimentos</h3>
+
+        <hr>
+        <h2>Juros Simples</h2>
+
+        <label for="capital">Capital (R$):</label>
+        <input type="number" id="capital">
+        <br>
+
+        <label for="juros">Juros:</label>
+        <div id="juros" style="display: inline-block;"></div>
+        <br>
+
+        <label for="tempo">Anos:</label>
+        <input type="number" id="tempo">
+
+        <button id="botao">Enviar</button>
+
+        <h3>Montante: <span id="resultado"></span></h3>
+
+        <hr>
+
+        <h2>Juros Compostos</h2>
+
+        <label for="capital1">Capital (R$):</label>
+        <input type="number" id="capital1">
+        <br>
+
+        <label for="juros1">Juros:</label>
+        <div id="juros1" style="display: inline-block;"></div>
+        <br>
+
+        <label for="tempo1">Anos:</label>
+        <input type="number" id="tempo1">
+
+        <button id="bot">Enviar</button>
+
+        <h3>Montante: <span id="resultad"></span></h3>
+    </div>
+
+    <script src="calculo.js"></script>
+
+</body>
+
+</html>
